@@ -7,6 +7,6 @@ public interface LocalDAO {
 
 	public boolean insereLocal(Local local, Usuario usuario);
 	public boolean alteraLocal(Local local, Usuario usuario);
-	public boolean excluiLocal(Local local, Usuario usuario);
-	public Local buscaLocal(Usuario usuario);
+	public boolean excluiLocalPorApelido(String apelido, Usuario usuario);
+	public Local buscaLocalPorApelido(String apelido, Usuario usuario);
 }
