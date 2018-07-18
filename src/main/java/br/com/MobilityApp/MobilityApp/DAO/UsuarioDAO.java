@@ -6,7 +6,7 @@ public interface UsuarioDAO {
 	
 	public boolean insereUsuario(Usuario usuario);
 	public boolean alteraUsuario(Usuario usuario);
-	public boolean excluirUsuario(Usuario usuario);
-	public Usuario buscaUsuarioPorCpf(String cpf);
+	public boolean excluirUsuarioPorCpf(String cpf);
+	public Usuario buscaUsuarioPorEmail(String email);
 
 }
