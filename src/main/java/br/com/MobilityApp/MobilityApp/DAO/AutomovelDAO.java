@@ -7,7 +7,7 @@ public interface AutomovelDAO {
 
 	public boolean insereAutomovel(Automovel automovel, Usuario usuario);
 	public boolean alteraAutomovel(Automovel automovel, Usuario usuario);
-	public boolean excluiAutomovel(Automovel automovel, Usuario usuario);
-	public Automovel buscaAutomovel(Usuario usuario);
+	public boolean excluiAutomovelPorApelido(String apelido, Usuario usuario);
+	public Automovel buscaAutomovelPorApelido(String apelido, Usuario usuario);
 	
 }

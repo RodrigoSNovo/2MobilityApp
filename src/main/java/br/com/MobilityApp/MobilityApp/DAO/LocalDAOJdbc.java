@@ -38,7 +38,7 @@ public class LocalDAOJdbc implements LocalDAO {
 
 	@Override
 	public boolean alteraLocal(Local local, Usuario usuario) {
-		String query = "UPDATE local SET apelido = ?, endereco = ? WHERE id = ? AND id_pessoa = ?";
+		String query = "UPDATE local SET apelido = ?, endereco = ? WHERE id_local = ? AND id_pessoa = ?";
 		
 		try {
 			Connection conn = new ConexaoDB().getConnection();
@@ -100,7 +100,7 @@ public class LocalDAOJdbc implements LocalDAO {
 			Local local = null;
 			if(rs.next()) {
 				local = new Local();
-				local.setId(rs.getInt("id"));
+				local.setId(rs.getInt("id_local"));
 				local.setIdUsuario(rs.getInt("id_pessoa"));
 				local.setApelido(rs.getString("apelido"));
 				local.setEndereco(rs.getString("endereco"));

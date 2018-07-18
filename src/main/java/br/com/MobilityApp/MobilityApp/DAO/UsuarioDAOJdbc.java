@@ -41,7 +41,7 @@ public class UsuarioDAOJdbc implements UsuarioDAO{
 
 	@Override
 	public boolean alteraUsuario(Usuario usuario) {
-		String query = "UPDATE pessoa SET cpf = ?, email = ?, nome_completo = ?, telefone = ?, ddd = ?, dt_nascimento = ?, senha = ? WHERE id = ?";
+		String query = "UPDATE pessoa SET cpf = ?, email = ?, nome_completo = ?, telefone = ?, ddd = ?, dt_nascimento = ?, senha = ? WHERE id_pessoa = ?";
 		
 		try {
 			Connection conn = new ConexaoDB().getConnection();
@@ -105,7 +105,7 @@ public class UsuarioDAOJdbc implements UsuarioDAO{
 			Usuario usuario = null;
 			if(rs.next()) {
 				usuario = new Usuario();
-				usuario.setId(rs.getInt("id"));
+				usuario.setId(rs.getInt("id_pessoa"));
 				usuario.setCpf(rs.getString("cpf"));
 				usuario.setEmail(rs.getString("email"));
 				usuario.setNome(rs.getString("nome_completo"));

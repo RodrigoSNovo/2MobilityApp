@@ -34,7 +34,7 @@ public class TransporteDAOJdbc implements TransporteDAO {
 
 	@Override
 	public boolean alteraTransporte(Transporte transporte) {
-		String query = "UPDATE tipo_transporte SET apelido = ? WHERE id = ?";
+		String query = "UPDATE tipo_transporte SET apelido = ? WHERE id_tipo_transporte = ?";
 		
 		try {
 			Connection conn = new ConexaoDB().getConnection();
@@ -57,7 +57,7 @@ public class TransporteDAOJdbc implements TransporteDAO {
 
 	@Override
 	public boolean excluiTransportePorId(int id) {
-		String query = "DELETE tipo_transporte WHERE id = ?";
+		String query = "DELETE tipo_transporte WHERE id_tipo_transporte = ?";
 		
 		try {
 			Connection conn = new ConexaoDB().getConnection();
@@ -92,7 +92,7 @@ public class TransporteDAOJdbc implements TransporteDAO {
 			Transporte transporte = null;
 			if(rs.next()) {
 				transporte = new Transporte();
-				transporte.setId(rs.getInt("id"));
+				transporte.setId(rs.getInt("id_tipo_transporte"));
 				transporte.setApelido(rs.getString("apelido"));
 			}
 			
