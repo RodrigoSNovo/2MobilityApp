@@ -9,5 +9,5 @@ public interface ViagemDAO {
 	public boolean insereViagem(Viagem viagem, Usuario usuario, Transporte transporte);
 	public boolean alteraViagem(Viagem viagem, Usuario usuario, Transporte transporte);
 	public boolean excluirViagem(Usuario usuario, Transporte transporte);
-	public Viagem buscaViagem(Viagem viagem, Usuario usuario, Transporte transporte);
+	public Viagem buscaViagem(Usuario usuario, Transporte transporte);
 }
